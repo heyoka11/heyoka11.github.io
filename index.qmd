@@ -1,8 +1,10 @@
 ---
-title: "Melihat hubungan ekspor dan nilai tukar"
+title: "Penerapan Analisis Regresi Berganda untuk Mengetahui
+Pengaruh Pertumbuhan Ekonomi dan Inflasi terhadap Tingkat
+Pengangguran di Indonesia pada Periode Tahun 2000-2022"
 subtitle: "Metode Penelitian Politeknik APP Jakarta"
-author: "I Made Krisna"
-date: 2022-08-10
+author: "Albani Rifqi Naufal "
+date: 2024-22-01
 number-sections: true
 format:
   html: default
@@ -15,19 +17,62 @@ This **just** a ~~showcase~~ of what *Quarto* docs can produce. I use this part 
 
 ### Latar belakang
 
-Latar belakang berisi tentang pentingnya topik yang diangkat dalam laporan. Uraikan alasan mengapa penulis tertarik menentukan topik yang dijadikan pembahasan, dapat menggunakan metode identifikasi masalah (fishbone diagram, root cause problem solving, dll). Kemukakan hal--hal yang mendorong atau argumentasi pentingnya penyelesaian permasalahan tersebut, termasuk jika ada hasil penelitian terkait yang telah dilakukan terdahulu.
+Di Indonesia, setiap tahun mengalami peningkatan tingkat pengangguran yang menjadi
+masalah serius, baik bagi negara maju maupun negara berkembang, termasuk Indonesia.
+Beberapa faktor penyebab pengangguran meliputi pertumbuhan ekonomi dan inflasi.
+
+Menurut Kornelius et al. (2016), pertumbuhan ekonomi menjadi indikator keberhasilan
+perekonomian suatu negara, diukur dengan peningkatan produksi barang dan jasa. Sumber
+daya manusia (SDM) adalah faktor utama dalam menghasilkan produk, selain modal dan
+sumber daya alam (SDA). Peningkatan pertumbuhan ekonomi berarti meningkatnya
+produksi barang dan jasa, yang berdampak pada peningkatan kebutuhan SDM.
+
+Inflasi, sebagai kondisi kenaikan harga biaya produksi dalam suatu perekonomian, dapat
+berpengaruh pada pengangguran. Inflasi tinggi menyebabkan kenaikan harga barang di
+perusahaan, mendorong perusahaan untuk mengurangi biaya produksi dengan mengurangi
+tenaga kerja melalui pemutusan hubungan kerja (PHK). Pengurangan tenaga kerja secara
+otomatis meningkatkan tingkat pengangguran. Oleh karena itu, diperlukan analisis regresi
+berganda untuk memahami bagaimana pertumbuhan ekonomi dan inflasi mempengaruhi
+tingkat pengangguran di Indonesia.
 
 ### Ruang lingkup
 
-Bagian ini menguraikan batasan ruang lingkup bahasan permasalahan pada laporan, dapat berupa batasan waktu maupun topik yang dibahas. Biasanya pertanyaan dan batasan penelitian ada di sini.
+Penelitian ini memfokuskan analisis pada dampak pertumbuhan ekonomi dan tingkat
+inflasi terhadap tingkat pengangguran di Indonesia selama periode 2000-2022. Objek
+penelitian mencakup data ekonomi Indonesia selama rentang waktu tersebut, dengan
+variabel utama adalah pertumbuhan ekonomi, tingkat inflasi, dan tingkat pengangguran.
 
 ### Rumusan masalah
 
-Bagian ini menuliskan poin-poin permasalahan apa saja yang akan dibahas dalam laporan. Dapat juga merumuskan hipotesis penelitian.
+Berdasarkan latar belakang tersebut, masalah pokok penelitian ini adalah:
+
+1. Sejauh mana pertumbuhan ekonomi berpengaruh terhadap tingkat pengangguran di
+Indonesia selama periode 2000-2022?
+2. Bagaimana tingkat inflasi mempengaruhi tingkat pengangguran di Indonesia dalam
+kurun waktu yang sama?
 
 ### Tujuan dan manfaat penelitian
 
-Bagian ini merupakan jawaban yang akan dicapai dari pembahasan laporan, biasanya dirumuskan dari poin-poin masalah yang telah dijabarkan sebelumnya. Identifikasi siapa saja stakeholders yang dapat memanfaatkan penelitian ini.
+Tujuan utama dari penelitian ini adalah:
+
+1. Memahami dampak pertumbuhan ekonomi terhadap tingkat pengangguran di
+Indonesia.
+2. Menganalisis pengaruh tingkat inflasi terhadap tingkat pengangguran di Indonesia.
+3. Memberikan wawasan untuk pengelolaan kebijakan ekonomi di masa depan.
+
+Manfaat dari penelitian ini meliputi:
+
+Manfaat Teoritis:
+Memberikan kontribusi pada pemahaman dampak pertumbuhan ekonomi dan inflasi
+terhadap tingkat pengangguran, menambah literatur akademis.
+
+Manfaat Praktis:
+1. Sebagai acuan untuk perumusan kebijakan ekonomi di Indonesia.
+2. Menyediakan dasar analitis bagi pembuat kebijakan, peneliti, dan praktisi ekonomi
+dalam memahami keterkaitan antara pertumbuhan ekonomi, inflasi, dan tingkat
+pengangguran.
+3. Memberikan landasan empiris untuk perencanaan kebijakan ekonomi yang lebih
+efektif dan berkelanjutan.
 
 ### Package
 
@@ -43,31 +88,57 @@ library(WDI) # tambahkan library lain jika diperlukan
 
 ## Studi pustaka
 
-Salah satu bagian yang penting dalam penelitian adalah melakukan studi literatur, yaitu membaca dari berbagai sumber sesuai dengan topik yang diteliti untuk menghasilkan ide/analisis baru yang dipresentasikan dalam sebuah karya ilmiah.
+1. Inflasi
 
-Bab ini menguraikan dasar-dasar teori dan istilah yang berhubungan dengan permasalahan yang ditemui atau yang mendasari pemilihan topik laporan. Studi Pustaka dilengkapi dengan sumber referensi yang dipakai dan bukan berdasarkan asumsi penulis.
+Inflasi dapat diartikan sebagai fenomena peningkatan tingkat harga pada tingkat agregat
+dalam perekonomian yang berlangsung secara terus-menerus. Dalam perspektif Mankiw
+(2007), inflasi dipahami sebagai perubahan yang terjadi pada tingkat harga secara
+berkelanjutan. Menurut definisi Bank Indonesia, inflasi mencakup kecenderungan
+meningkatnya harga-harga barang dan jasa secara umum dan berkelanjutan. Laju inflasi
+menggambarkan perkembangan kenaikan harga berbagai barang dan jasa secara umum
+dalam suatu periode tertentu. Terdapat tiga aspek penting dalam definisi umum inflasi,
+yaitu adanya kecenderungan harga-harga yang meningkat, peningkatan harga yang
+berlangsung secara terus-menerus, dan pemahaman bahwa harga yang dimaksud
+mencakup keseluruhan komoditas, bukan hanya satu atau beberapa komoditas saja.
+
+2. Pertumbuhan Ekonomi
+
+Pertumbuhan ekonomi menjadi fokus utama perekonomian dalam upaya mencapai tujuan
+jangka panjang dan pendek. Dumairy (2000) menjelaskan bahwa pertumbuhan ekonomi
+memberikan gambaran tentang kinerja suatu perekonomian. Konsep ini juga didefinisikan
+sebagai peningkatan produksi barang dan jasa oleh masyarakat yang berdampak pada
+peningkatan kemakmuran (Sukirno, 2011).
+Menurut Todaro dan Smith (2004), terdapat tiga faktor kunci yang mendorong
+pertumbuhan ekonomi suatu negara. Pertama, akumulasi barang modal, mencakup
+investasi baru seperti tanah, modal fisik, dan modal manusia. Investasi fisik secara
+langsung mempengaruhi pertumbuhan output di masa depan. Kedua, pertumbuhan
+penduduk dapat memberikan dampak pada perkembangan angkatan kerja, meningkatkan
+tenaga kerja produktif. Namun, pertumbuhan penduduk yang terus meningkat juga
+mempengaruhi ukuran pasar domestik. Terakhir, kemajuan teknologi akan menghasilkan
+metode baru atau penyempurnaan metode lama dalam menyelesaikan pekerjaan.
+
+3. Pengangguran
+
+Penduduk usia kerja dapat dibagi menjadi dua kelompok utama, yaitu angkatan kerja dan
+bukan angkatan kerja. Tenaga kerja, atau manpower, terdiri dari kedua kelompok ini.
+Angkatan kerja, atau labor force, mencakup golongan yang sedang bekerja dan golongan
+yang menganggur sambil mencari pekerjaan, sebagaimana dijelaskan oleh Bellante (1983).
+Lipsey et al. (1997) membedakan pengangguran menjadi tiga jenis utama, yaitu
+pengangguran siklis, pengangguran friksional, dan pengangguran struktural. Pengangguran
+siklis terjadi akibat permintaan yang tidak memadai untuk membeli seluruh potensi output
+ekonomi, mengakibatkan resesi dengan output aktual lebih kecil dari keluaran potensial.
+Kelompok ini dianggap sebagai orang yang menganggur secara terpaksa karena pekerjaan
+yang diinginkan tidak tersedia
 
 ## Metode penelitian
 
 ### Data
 
-| negara   | ekspor    |
-|----------|-----------|
-| cina     | 20.000USD |
-| thailand | 21.000USD |
-| vietnam  | 10.000USD |
+Berikut adalah data yang digunakan sebagai objek penelitian, data dibawah ini merupakan
+data pengangguran, pertumbuhan ekonomi, dan Inflasi.
 
-: lalala ekspor asal-asalan
 
-| Col1 | Col2 | Col3 |
-|------|------|------|
-|      |      |      |
-|      |      |      |
-|      |      |      |
 
-: wleowleo wleo
-
-![logo APP muncul secara random lalalala](poltekapp.jpg)
 
 penelitian ini menggunakan data xxx
 
